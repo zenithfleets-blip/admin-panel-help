@@ -1,0 +1,32 @@
+import fetch from "node-fetch";
+
+export async function sendPushNotification(expoPushToken, title, body, data = {}) {
+  if (!expoPushToken) return;
+
+  const message = {
+    to: expoPushToken,
+    sound: "default",
+    title,
+    body,
+    data,
+  };
+
+  await fetch("https://exp.host/--/api/v2/push/send", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(message),
+  });
+}
+
+
+const support = await Support.findById(supportId);
+
+await sendPushNotification(
+  support.device.expoPushToken,
+  "📦 New Task Assigned",
+  "You have received a new task.",
+  { taskId: task._id }
+);

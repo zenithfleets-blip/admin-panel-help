@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "phoneloginapp-7e9e0"
+  },
+  "targets": {
+    "phoneloginapp-7e9e0": {
+      "hosting": {
+        "admin": [
+          "phoneloginapp-7e9e0-569d0"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
